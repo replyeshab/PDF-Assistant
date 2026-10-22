@@ -1,10 +1,10 @@
-# 📄 PDF Knowledge Assistant — RAG-Based Document Q&A
+# PDF Knowledge Assistant — RAG-Based Document Q&A
 
 A conversational assistant that lets users query information from a PDF through natural-language questions. The project combines document knowledge retrieval, vector search, persistent conversation storage, and an interactive command-line interface.
 
 Built with Python, the Phi Assistant framework, PostgreSQL, and pgvector, the application demonstrates a practical approach to building a retrieval-augmented question-answering system over document-based knowledge.
 
-## ✨ Features
+## Features
 
 - **PDF knowledge ingestion:** Loads a PDF from a URL into a searchable knowledge base.
 - **Retrieval-augmented question answering:** Enables the assistant to search the knowledge base when responding to user queries.
@@ -16,7 +16,7 @@ Built with Python, the Phi Assistant framework, PostgreSQL, and pgvector, the ap
 - **Command-line interface:** Uses Typer to expose the assistant as an interactive CLI application.
 - **Markdown responses:** Runs the CLI in Markdown mode for readable output.
 
-## 🧠 How It Works
+##  How It Works
 
 The application follows a document retrieval and conversational question-answering workflow.
 
@@ -27,7 +27,7 @@ The application follows a document retrieval and conversational question-answeri
 5. **Maintain conversation history:** PostgreSQL-backed assistant storage persists conversations between sessions.
 6. **Resume or start a session:** The CLI can continue an existing run for a user or create a new one.
 
-## 🏗️ Architecture
+##  Architecture
 
 ```mermaid
 flowchart TD
@@ -43,7 +43,7 @@ flowchart TD
     I --> J[PostgreSQL]
 ```
 
-## 🛠️ Tech Stack
+##  Tech Stack
 
 | Technology | Purpose |
 |---|---|
@@ -56,7 +56,7 @@ flowchart TD
 | python-dotenv | Environment variable loading |
 | Psycopg | PostgreSQL connectivity |
 
-## 📁 Project Structure
+##  Project Structure
 
 ```text
 pdf-knowledge-assistant/
@@ -69,7 +69,7 @@ pdf-knowledge-assistant/
 
 The current implementation is contained primarily in `pdf_assistant.py`. The supporting files are recommended for dependency management and configuration.
 
-## 🚀 Getting Started
+##  Getting Started
 
 ### Prerequisites
 
@@ -147,7 +147,7 @@ The application uses Typer to launch the assistant's CLI.
 
 To create a new conversation instead of resuming the existing session, use the `--new` option supported by the declared `new` parameter. You can also specify a user identifier using the `--user` option.
 
-## 📚 Current Document Source
+##  Current Document Source
 
 The uploaded implementation uses a sample Thai recipes PDF:
 
@@ -157,7 +157,7 @@ The PDF URL is hardcoded in the source. To use another document, configure the d
 
 The current code does not yet provide a web-based PDF upload interface.
 
-## 💾 Conversation Persistence
+##  Conversation Persistence
 
 The application uses `PgAssistantStorage` with the `pdf_assistant` table to persist assistant sessions.
 
@@ -165,7 +165,7 @@ When the application starts, it attempts to retrieve an existing run for the sel
 
 This supports a stateful, multi-turn command-line interaction instead of treating every question as an isolated request.
 
-## 🔒 Security and Reliability Considerations
+##  Security and Reliability Considerations
 
 Before deploying the application publicly:
 
@@ -177,7 +177,7 @@ Before deploying the application publicly:
 - Pin dependencies and document the supported Python and PostgreSQL versions.
 - Avoid committing `.env` files or generated secrets to version control.
 
-## 🔮 Future Improvements
+##  Future Improvements
 
 - Support user-uploaded PDF files.
 - Add a web interface using FastAPI or Streamlit.
@@ -187,7 +187,7 @@ Before deploying the application publicly:
 - Add document-level access controls for multiple users.
 - Implement structured logging and production deployment configuration.
 
-## 📚 References
+##  References
 
 - [Phi / Phidata documentation](https://docs.phidata.com/)
 - [PostgreSQL documentation](https://www.postgresql.org/docs/)
